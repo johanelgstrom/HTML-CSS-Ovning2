@@ -1,0 +1,217 @@
+html,
+body {
+  height: 100%;
+  background-color: #f7f7f7;
+  margin: 0%;
+  scroll-behavior: smooth;
+}
+
+.hero {
+  height: 100vh;
+  background-image: url(/assets/negative-space-black-forest-dawn.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: 50%;
+  color: white;
+}
+
+header {
+  height: 10vh;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+header .header-links {
+  width: 93%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: 25px;
+  right: 45px;
+  list-style-type: none;
+  position: absolute;
+}
+header .header-links li {
+  position: relative;
+}
+header .header-links li a:link,
+header .header-links li a:visited {
+  text-decoration: none;
+  color: white;
+}
+header .header-links li a:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+.herotext {
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+.herotext h2,
+.herotext p {
+  position: relative;
+}
+
+.team-text {
+  display: flex;
+  justify-content: center;
+}
+
+.team {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.personal {
+  height: 10%;
+  width: 75%;
+  padding: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.personal-name {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+}
+.personal-name h4 {
+  position: relative;
+}
+
+.team-info {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 75%;
+}
+.team-info p {
+  background-color: #e4e4e4;
+  padding: 30px;
+  border-radius: 5%;
+}
+.team-info p i {
+  margin-right: 5px;
+}
+
+.image-container {
+  height: 250px;
+  margin-top: 60px;
+}
+.image-container img {
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: #a5a5a5 0px 0px 20px;
+}
+
+footer {
+  height: 325px;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+footer .footer-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  position: absolute;
+}
+footer .footer-wrapper ul {
+  position: relative;
+}
+footer .footer-wrapper ul li {
+  list-style-type: none;
+  margin-top: 10px;
+}
+
+.image-container-footer {
+  height: 17px;
+  display: flex;
+  float: left;
+}
+.image-container-footer img {
+  height: 100%;
+  margin-right: 10px;
+  filter: invert(100%);
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  position: absolute;
+  height: 100%;
+  margin-bottom: 50px;
+}
+.button-container button {
+  border: 0;
+  background: transparent;
+  height: 25px;
+  position: absolute;
+}
+.button-container button img {
+  height: 100%;
+  filter: invert(100%);
+}
+
+.button-container-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  position: absolute;
+  height: 100%;
+  margin-bottom: -50px;
+}
+.button-container-bottom button {
+  border: 0;
+  background: transparent;
+  height: 25px;
+  position: absolute;
+}
+.button-container-bottom button img {
+  height: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+    background-size: cover;
+  }
+
+  .team {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .personal {
+    width: 35%;
+  }
+
+  footer {
+    height: 200px;
+  }
+  footer .footer-wrapper {
+    flex-direction: row;
+  }
+  footer .footer-wrapper ul {
+    position: relative;
+    margin-right: 45px;
+  }
+  footer .footer-wrapper ul li {
+    list-style-type: none;
+    margin-top: 20px;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
