@@ -1,6 +1,7 @@
 $background: rgb(247, 247, 247);
 $text-color-primary: white;
 $full: 100%;
+$header-color: rgba(255, 255, 255, 0.1);
 html,
 body {
   height: 100%;
@@ -18,30 +19,85 @@ body {
   color: $text-color-primary;
 }
 header {
-  height: 10vh;
-  background-color: rgba(255, 255, 255, 0.1);
-  .header-links {
-    width: 93%;
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    gap: 25px;
-    right: 45px;
-    list-style-type: none;
-    position: absolute;
-    li {
+  height: 1fr;
+  background-color: $header-color;
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .p-menu1 {
+    height: 100%;
+  }
+  /* Hamburger */
+  .hamburger1 {
+    height: 45px;
+    margin-right: 10px;
+    display: -ms-grid;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    justify-items: right;
+    z-index: 120;
+    div {
+      background-color: $text-color-primary;
       position: relative;
-      a:link,
-      a:visited {
-        text-decoration: none;
-        color: $text-color-primary;
-      }
-      a:hover {
-        text-decoration: underline;
-        color: $text-color-primary;
-      }
+      width: 40px;
+      height: 5px;
+      margin-top: 7px;
+      -webkit-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
     }
   }
+  #toggle1 {
+    display: none;
+  }
+  #toggle1:checked + .hamburger1 .top {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    margin-top: 22.5px;
+  }
+  #toggle1:checked + .hamburger1 .meat {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    margin-top: -5px;
+  }
+  #toggle1:checked + .hamburger1 .bottom {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  #toggle1:checked ~ .menu1 {
+    height: 120px;
+  }
+  #toggle1:checked ~ .herotext {
+    margin-top: 300px;
+  }
+  /* Menu */
+  .menu1 {
+    width: 100%;
+    margin: 0;
+    display: -ms-grid;
+    display: grid;
+    grid-template-rows: 1fr repeat(4, 0.5fr);
+    grid-row-gap: 3px;
+    padding: 0;
+    list-style: none;
+    clear: both;
+    width: auto;
+    text-align: center;
+    height: 0px;
+    overflow: hidden;
+    transition: height 0.4s ease;
+    z-index: 120;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    .link1 {
+      width: 100%;
+      margin: 0;
+      padding: 10px 0;
+    }
+  }
+}
+.menu2 {
+  visibility: hidden;
 }
 
 .herotext {
@@ -56,6 +112,24 @@ header {
   p {
     position: relative;
   }
+  .button-container-top {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    position: absolute;
+    height: $full;
+    margin-bottom: 50px;
+    button {
+      border: 0;
+      background: transparent;
+      height: 25px;
+      position: static;
+      img {
+        height: 100%;
+        filter: invert(100%);
+      }
+    }
+  }
 }
 // TEAM //
 .team-text {
@@ -69,6 +143,23 @@ header {
   align-items: center;
   position: relative;
   margin-bottom: 50px;
+  .button-container-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    position: absolute;
+    height: $full;
+    margin-bottom: -50px;
+    button {
+      border: 0;
+      background: transparent;
+      height: 25px;
+      position: absolute;
+      img {
+        height: 100%;
+      }
+    }
+  }
 }
 .personal {
   height: 10%;
@@ -77,38 +168,39 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
-.personal-name {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  h4 {
+  .team-info {
+    display: flex;
+    justify-content: center;
     position: relative;
+    width: 75%;
+    p {
+      background-color: rgb(228, 228, 228);
+      padding: 30px;
+      border-radius: 5%;
+      i {
+        margin-right: 5px;
+      }
+    }
   }
-}
-.team-info {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  width: 75%;
-  p {
-    background-color: rgb(228, 228, 228);
-    padding: 30px;
-    border-radius: 5%;
-    i {
-      margin-right: 5px;
+  .image-container {
+    height: 250px;
+    margin-top: 60px;
+    img {
+      height: $full;
+      border-radius: 50%;
+      box-shadow: rgb(165, 165, 165) 0px 0px 20px;
+    }
+  }
+  .personal-name {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    h4 {
+      position: relative;
     }
   }
 }
-.image-container {
-  height: 250px;
-  margin-top: 60px;
-  img {
-    height: $full;
-    border-radius: 50%;
-    box-shadow: rgb(165, 165, 165) 0px 0px 20px;
-  }
-}
+
 footer {
   $footer-colour: black;
   height: 325px;
@@ -130,55 +222,40 @@ footer {
         margin-top: 10px;
       }
     }
-  }
-}
-.image-container-footer {
-  height: 17px;
-  display: flex;
-  float: left;
-  img {
-    height: $full;
-    margin-right: 10px;
-    filter: invert(100%);
-  }
-}
-.button-container {
-  display: flex;
-  justify-content: center;
-  align-items: end;
-  position: absolute;
-  height: $full;
-  margin-bottom: 50px;
-  button {
-    border: 0;
-    background: transparent;
-    height: 25px;
-    position: absolute;
-    img {
-      height: 100%;
-      filter: invert(100%);
-    }
-  }
-}
-.button-container-bottom {
-  display: flex;
-  justify-content: center;
-  align-items: end;
-  position: absolute;
-  height: $full;
-  margin-bottom: -50px;
-  button {
-    border: 0;
-    background: transparent;
-    height: 25px;
-    position: absolute;
-    img {
-      height: 100%;
+    .image-container-footer {
+      height: 17px;
+      display: flex;
+      float: left;
+      img {
+        height: $full;
+        margin-right: 10px;
+        filter: invert(100%);
+      }
     }
   }
 }
 
 @media screen and (min-width: 768px) {
+  .hamburger1,
+  #navbar {
+    visibility: hidden;
+    height: 0px;
+  }
+  header {
+    height: 63px;
+  }
+  .menu1 {
+    overflow: unset;
+  }
+  .menu2 {
+    visibility: visible;
+    padding: 5px;
+    margin-top: -47px;
+    float: right;
+    a {
+      margin-left: 25px;
+    }
+  }
   .hero {
     background-size: cover;
   }
