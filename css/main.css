@@ -228,6 +228,13 @@ footer .footer-wrapper ul li {
   list-style-type: none;
   margin-top: 10px;
 }
+footer .footer-wrapper ul li a {
+  color: white;
+  text-decoration: none;
+}
+footer .footer-wrapper ul li a:hover {
+  text-decoration: underline;
+}
 footer .footer-wrapper .image-container-footer {
   height: 17px;
   display: flex;
