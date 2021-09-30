@@ -64,27 +64,32 @@ header #toggle1:checked + .hamburger1 .bottom {
   transform: scale(0);
 }
 header #toggle1:checked ~ .menu1 {
+  background-color: rgba(255, 255, 255, 0.1);
   height: 120px;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
 }
 header #toggle1:checked ~ .herotext {
   margin-top: 300px;
 }
 header .menu1 {
+  background-color: rgba(255, 255, 255, 0.1);
   width: 100%;
-  margin: 0;
+  margin-top: 18px;
   display: -ms-grid;
   display: grid;
   grid-template-rows: 1fr repeat(4, 0.5fr);
   grid-row-gap: 3px;
+  position: absolute;
   padding: 0;
   list-style: none;
   clear: both;
-  width: auto;
   text-align: center;
   height: 0px;
   overflow: hidden;
   transition: height 0.4s ease;
-  z-index: 120;
+  z-index: 1;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -257,6 +262,9 @@ footer .footer-wrapper .image-container-footer img {
   }
   .menu2 a {
     margin-left: 25px;
+  }
+  .menu2 a:hover {
+    text-decoration: underline;
   }
 
   .hero {
