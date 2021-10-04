@@ -4,14 +4,14 @@ $full: 100%;
 $header-color: rgba(255, 255, 255, 0.1);
 html,
 body {
-  height: 100%;
+  height: $full;
   background-color: $background;
   margin: 0%;
   scroll-behavior: smooth;
 }
 // HERO & HEADER //
 .hero {
-  height: 100vh;
+  height: $full;
   background-image: url("../assets/negative-space-black-forest-dawn.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -19,24 +19,17 @@ body {
   color: $text-color-primary;
 }
 header {
-  height: 1fr;
   background-color: $header-color;
   a {
     color: #fff;
     text-decoration: none;
   }
-  .p-menu1 {
-    height: 100%;
-  }
-  /* Hamburger */
+  // HAMBURGER //
   .hamburger1 {
     height: 45px;
     margin-right: 10px;
-    display: -ms-grid;
     display: grid;
-    grid-template-rows: repeat(3, 1fr);
     justify-items: right;
-    z-index: 120;
     div {
       background-color: $text-color-primary;
       position: relative;
@@ -71,42 +64,31 @@ header {
     z-index: 1;
     width: 100%;
   }
-  #toggle1:checked ~ .herotext {
-    margin-top: 300px;
-  }
-  /* Menu */
+}
+// MENU //
+.p-menu1 {
+  height: $full;
   .menu1 {
     background-color: $header-color;
-    width: 100%;
+    width: $full;
     margin-top: 18px;
-    display: -ms-grid;
     display: grid;
-    grid-template-rows: 1fr repeat(4, 0.5fr);
     grid-row-gap: 3px;
     position: absolute;
-    padding: 0;
-    list-style: none;
-    clear: both;
     text-align: center;
     height: 0px;
     overflow: hidden;
     transition: height 0.4s ease;
-    z-index: 1;
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
     .link1 {
-      width: 100%;
-      margin: 0;
-      padding: 10px 0;
+      padding: 10px;
     }
   }
 }
 .menu2 {
   visibility: hidden;
 }
-
 .herotext {
-  height: 90vh;
+  height: 93%;
   width: $full;
   display: flex;
   flex-direction: column;
@@ -119,19 +101,18 @@ header {
   }
   .button-container-top {
     display: flex;
-    justify-content: center;
     align-items: end;
     position: absolute;
     height: $full;
-    margin-bottom: 50px;
+    margin-bottom: 70px;
     button {
       border: 0;
       background: transparent;
       height: 25px;
       position: static;
       img {
-        height: 100%;
-        filter: invert(100%);
+        height: $full;
+        filter: invert($full);
       }
     }
   }
@@ -161,13 +142,12 @@ header {
       height: 25px;
       position: absolute;
       img {
-        height: 100%;
+        height: $full;
       }
     }
   }
 }
 .personal {
-  height: 10%;
   width: 75%;
   padding: 5px;
   display: flex;
@@ -183,7 +163,7 @@ header {
       padding: 30px;
       border-radius: 5%;
       i {
-        margin-right: 5px;
+        margin-right: 4px;
       }
     }
   }
@@ -205,21 +185,19 @@ header {
     }
   }
 }
-
+// FOOTER //
 footer {
   $footer-colour: black;
   height: 325px;
   background-color: $footer-colour;
   color: $text-color-primary;
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
   .footer-wrapper {
     width: $full;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    position: absolute;
     ul {
       position: relative;
       li {
@@ -236,17 +214,15 @@ footer {
     }
     .image-container-footer {
       height: 17px;
-      display: flex;
       float: left;
       img {
         height: $full;
         margin-right: 10px;
-        filter: invert(100%);
+        filter: invert($full);
       }
     }
   }
 }
-
 @media screen and (min-width: 768px) {
   .hamburger1,
   #navbar {
@@ -255,9 +231,6 @@ footer {
   }
   header {
     height: 63px;
-  }
-  .menu1 {
-    overflow: unset;
   }
   .menu2 {
     visibility: visible;
@@ -271,8 +244,10 @@ footer {
       text-decoration: underline;
     }
   }
-  .hero {
-    background-size: cover;
+  .herotext {
+    .button-container-top {
+      margin-bottom: 0px;
+    }
   }
   .team {
     flex-direction: row;
@@ -286,10 +261,8 @@ footer {
     .footer-wrapper {
       flex-direction: row;
       ul {
-        position: relative;
         margin-right: 45px;
         li {
-          list-style-type: none;
           margin-top: 20px;
         }
       }
